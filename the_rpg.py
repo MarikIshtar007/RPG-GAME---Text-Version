@@ -11,7 +11,7 @@ def print_title(str):
 def print_slow(str):
     for letter in str:
         print(letter,end="")
-        time.sleep(.16)
+        time.sleep(.06)
     print()
 
 
@@ -22,7 +22,7 @@ def guard_enters(wall_value):
 
 
 def dungeon_start():
-    time = 0
+    time_count = 0
     wall = 0
     choices = {'1': "The door is made with strengthened steel. It's very durable.\n",
                '2': "These walls are pretty well made with very few cracks.\n",
@@ -31,22 +31,23 @@ def dungeon_start():
     print("You wake up in a dungeon. Its a small brick-walled room.")
     time.sleep(1)
     print("You look across and you see :")
-    time.sleep(1)
+    time.sleep(1.5)
     print("The door made of iron bars")
-    time.sleep(1)
+    time.sleep(1.5)
     print("Almost no cracks in the wall")
-    time.sleep(1)
+    time.sleep(1.8)
     print("A copper utensil for eating food.")
-    time.sleep(1)
+    time.sleep(1.5)
     print("What do you do?")
     time.sleep(1.8)
-    while time<4:
+    while time_count<4:
         print("What will you do ? (choose the number of your choice)")
+        time.sleep(1)
         choice = input("1. Check the door\n2. Check the walls\n3. Look at the copper utensil\n4. Wait\n")
-        time += 1
+        time_count += 1
         if choice == 2:
             wall += 1
-        if wall > 2 :
+        if wall >= 2:
             choices['2'] = "These walls.... They are no ordinary walls. It's a part of hidden tunnel system. Your father had it made."
         print_slow(choices[choice])
 
