@@ -16,7 +16,22 @@ def print_slow(str):
 
 
 def guard_enters(wall_value):
-    print("Guard: So you are awake.")
+    prCyan("Guard: HEY.... Looks like you are awake..")
+    time.sleep(0.8)
+    prCyan("Guard: Doesn't this look all familiar? It's your castle's dungeon after all.")
+    time.sleep(1)
+    prYellow("You: Where is Marx...? ")
+    time.sleep(1)
+    prCyan("Guard: Show Respect.. It's Lord Marx.")
+    time.sleep(0.6)
+    prCyan("Guard: His Majesty is out reclaiming Dominots for himself.")
+    time.sleep(0.4)
+    prYellow("You: That is my Kingdom.!!!1")
+    time.sleep(0.5)
+    prCyan("Guard: Not anymore. Well, rot in here for the rest of your life. Hehehe")
+    print_slow(".........")
+    print_slow("The guard leaves.")
+    prYellow("You: I need to escape from here and let Chiron know of all this.")
     pass
 
 
@@ -30,17 +45,17 @@ def dungeon_start():
                '4': "... Waiting... Waiting\n",
                '5': "You are no one to be here. You COWARD!"
                }
-    prYellow("You wake up in a dungeon. Its a small brick-walled room.")
+    prLightPurple("You wake up in a dungeon. Its a small brick-walled room.")
     time.sleep(1)
-    prRed("You look across and you see :")
+    prLightPurple("You look across and you see :")
     time.sleep(1.6)
-    prPurple("The door made of iron bars")
+    prLightPurple("The door made of iron bars")
     time.sleep(1.6)
     prLightPurple("Almost no cracks in the wall")
     time.sleep(1.6)
-    prCyan("A copper utensil for eating food.")
+    prLightPurple("A copper utensil for eating food.")
     time.sleep(1.6)
-    prGreen("What do you do?")
+    prLightPurple("What do you do?")
     time.sleep(2)
     while time_count<4:
         prRed("What will you do ? (choose the number of your choice)")
@@ -52,8 +67,8 @@ def dungeon_start():
         if wall >= 2:
             choices['2'] = "These walls.... They are no ordinary walls. It's a part of hidden tunnel system. Your father had it made."
         print_slow(choices[choice])
-        if choice > 4:
-            prRed("You are no one to be here. You COWARD!")
+        # if choice > 4:
+        #     prRed("You are no one to be here. You COWARD!")
     guard_enters(wall)
 
 # colored text and background.
