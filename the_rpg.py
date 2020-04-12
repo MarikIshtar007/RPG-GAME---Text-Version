@@ -16,7 +16,22 @@ def print_slow(str):
 
 
 def guard_enters(wall_value):
-    print("Guard: So you are awake.")
+    prCyan("Guard: HEY.... Looks like you are awake..")
+    time.sleep(0.8)
+    prCyan("Guard: Doesn't this look all familiar? It's your castle's dungeon after all.")
+    time.sleep(1)
+    prYellow("You: Where is Marx...? ")
+    time.sleep(1)
+    prCyan("Guard: Show Respect.. It's Lord Marx.")
+    time.sleep(0.6)
+    prCyan("Guard: His Majesty is out reclaiming Dominots for himself.")
+    time.sleep(0.4)
+    prYellow("You: That is my Kingdom.!!!1")
+    time.sleep(0.5)
+    prCyan("Guard: Not anymore. Well, rot in here for the rest of your life. Hehehe")
+    print_slow(".........")
+    print_slow("The guard leaves.")
+    prYellow("You: I need to escape from here and let Chiron know of all this.")
     pass
 
 
@@ -27,21 +42,23 @@ def dungeon_start():
     choices = {'1': "The door is made with strengthened steel. It's very durable.\n",
                '2': "These walls are pretty well made with very few cracks.\n",
                '3': "The copper utensil is cold and brittle. No food and probably not a weapon for you.\n",
-               '4': "... Waiting... Waiting\n"}
-    print("You wake up in a dungeon. Its a small brick-walled room.")
+               '4': "... Waiting... Waiting\n",
+               '5': "You are no one to be here. You COWARD!"
+               }
+    prLightPurple("You wake up in a dungeon. Its a small brick-walled room.")
     time.sleep(1)
-    print("You look across and you see :")
-    time.sleep(1.5)
-    print("The door made of iron bars")
-    time.sleep(1.5)
-    print("Almost no cracks in the wall")
-    time.sleep(1.8)
-    print("A copper utensil for eating food.")
-    time.sleep(1.5)
-    print("What do you do?")
-    time.sleep(1.8)
+    prLightPurple("You look across and you see :")
+    time.sleep(1.6)
+    prLightPurple("The door made of iron bars")
+    time.sleep(1.6)
+    prLightPurple("Almost no cracks in the wall")
+    time.sleep(1.6)
+    prLightPurple("A copper utensil for eating food.")
+    time.sleep(1.6)
+    prLightPurple("What do you do?")
+    time.sleep(2)
     while time_count<4:
-        print("What will you do ? (choose the number of your choice)")
+        prRed("What will you do ? (choose the number of your choice)")
         time.sleep(1)
         choice = input("1. Check the door\n2. Check the walls\n3. Look at the copper utensil\n4. Wait\n")
         time_count += 1
@@ -50,9 +67,20 @@ def dungeon_start():
         if wall >= 2:
             choices['2'] = "These walls.... They are no ordinary walls. It's a part of hidden tunnel system. Your father had it made."
         print_slow(choices[choice])
-
+        # if choice > 4:
+        #     prRed("You are no one to be here. You COWARD!")
     guard_enters(wall)
 
+# colored text and background.
+#use these pr functions for print statements
+def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
+def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+def prLightPurple(skk): print("\033[94m {}\033[00m" .format(skk))
+def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
+def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
+def prLightGray(skk): print("\033[97m {}\033[00m" .format(skk))
+def prBlack(skk): print("\033[98m {}\033[00m" .format(skk))
 
 
 def init():
