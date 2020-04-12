@@ -52,7 +52,7 @@ def dungeon_start():
         if wall >= 2:
             choices['2'] = "These walls.... They are no ordinary walls. It's a part of hidden tunnel system. Your father had it made."
         print_slow(choices[choice])
-        if choice >4:
+        if choice > 4:
             prRed("You are no one to be here. You COWARD!")
     guard_enters(wall)
 
