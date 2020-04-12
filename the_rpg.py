@@ -27,12 +27,12 @@ def dungeon_start():
     choices = {'1': "The door is made with strengthened steel. It's very durable.\n",
                '2': "These walls are pretty well made with very few cracks.\n",
                '3': "The copper utensil is cold and brittle. No food and probably not a weapon for you.\n",
-               '4': "... Waiting... Waiting\n"
+               '4': "... Waiting... Waiting\n",
                '5': "You are no one to be here. You COWARD!"
                }
     prYellow("You wake up in a dungeon. Its a small brick-walled room.")
     time.sleep(1)
-    prRed(" You look across and you see :")
+    prRed("You look across and you see :")
     time.sleep(1.6)
     prPurple("The door made of iron bars")
     time.sleep(1.6)
@@ -56,7 +56,7 @@ def dungeon_start():
             prRed("You are no one to be here. You COWARD!")
     guard_enters(wall)
 
-# colored text and background
+# colored text and background.
 #use these pr functions for print statements
 def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
 def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
