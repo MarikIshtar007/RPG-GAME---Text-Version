@@ -31,7 +31,18 @@ def guard_enters(wall_value):
     prCyan("Guard: Not anymore. Well, rot in here for the rest of your life. Hehehe")
     print_slow(".........")
     print_slow("The guard leaves.")
-    prYellow("You: I need to escape from here and let Chiron know of all this.")
+    prYellow("You: I need to escape from here and let Chiron know of all this.\n\n\n")
+    time.sleep(0.4)
+    prYellow("You: Looks like a small opening at the top right corner of the ceiling, ")
+    time.sleep(0.4) #find a way to print colored text slowly
+    prYellow(" I need to somehow reach there to have a idea of where I am.")
+    time.sleep(0.4)
+    print_slow("You see a prick on the wall\nAnd you somehow have to get a hold of it to take a look\nfrom the hole.")
+    #haany, make a choice option for the user to get a hold of this prick or something that user can take a look outside
+    #user will encounter a old wise snake over there who is hungry from ages, and if he helps the snake get some #
+    #food by snake game, the snake will help him get to somewhere out
+    #i will be adding that snake game soon, u just make the option thing and also tell me that how can we link that
+    #snake game to this rpg
     pass
 
 
