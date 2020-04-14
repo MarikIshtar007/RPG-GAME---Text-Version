@@ -17,7 +17,6 @@ dis = pygame.display.set_mode((dis_width, dis_height))
 pygame.display.set_caption('Snake Game by Ayushman')
 
 clock = pygame.time.Clock()
-
 snake_block = 10
 snake_speed = 15
 
