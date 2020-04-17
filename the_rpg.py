@@ -2,6 +2,7 @@ from RPG_IO import *
 import time
 import os
 
+
 def the_escape():
     bee = 0
     prSloYellow("You: .... ... Now what do I do?.......")
@@ -16,12 +17,16 @@ def the_escape():
     while bee < 2:
         ans = input("1. Check out the hole again...\n2. Do Nothing.\n3. Try yelling at the guards\n")
         if ans == "1":
+            print_slow("The hole is not big enough for even your arm....")
+            time.sleep(0.5)
             break
         else:
             bee += 1
             if ans == "2":
                 print_real_slow("....")
             elif ans == "3":
+                prSloYellow("You: IS ANYONE THERE!!?????")
+                time.sleep(0.4)
                 print_slow(".....Looks like no guards are around....")
     print_slow("...BBBZZZZZZ..... BBBZZZZZZZZZZ...... ")
     print_slow(".. A bee comes in thorugh the hole.")
@@ -35,52 +40,50 @@ def the_escape():
     time.sleep(1.3)
     print("But you manage to make the hole big enough for you to pass through.")
     time.sleep(1)
+
+
+
+#############################################################################################################
+##########################################################################################################
 # I was thinking of making a choice here of taking the bronze plate along or not.
-# But the thing is, if we do that, then we will have to maintain an inventory as well#
+# But the thing is, if we do that, then we will have to maintain an inventory as well
 # What do you say? Limited Inventory. The player will not be able to check it all the time.
-# Just make use of things in it on special occasions. Special points in game will unlock special scenes,
+# Coz that would just make stuff problematic for us.
+# Just make use of things in it on special occasions. Special areas in game will unlock special scenes,
 # if you have certain items at that point in your inventory
+# Do we go ahead with it?
+
 
 # As for secret passage, we will try not to think about it much.. its just a shortcut, to almost direct exit
 # out of castle. But both secret passage and the_escape will make MC reach a common point.
-# Albeit, secre_passage will be shorter
+# Albeit, secret_passage will be shorter
 
 
 def secret_passage():
+    prSloYellow("You: Looks like everyone is gone.")
+    prSloYellow("You:.. Now, about that hidden passage.")
+    prSloYellow("You: Chiron did tell me it almost connects the entire castle.")
+    prSloYellow("This place is certainly not the dungeons. ")
+    prSloYellow("The passage was never connected to them.")
+    prSloYellow("I don't care either way. I have to get out.")
     pass
 
 
 def guard_enters(wall_value):
     prSloCyan("Guard: HEY.... Looks like you are awake..")
-    time.sleep(0.8)
     prSloCyan("Guard: Doesn't this look all familiar? It's your castle's dungeon after all.")
-    time.sleep(1)
     prSloYellow("You: Where is Marx...? ")
-    time.sleep(1)
     prSloCyan("Guard: How DARE YOU!!???! ... It's Lord Marx.")
-    time.sleep(0.6)
     prSloCyan("Guard: His Majesty is out reclaiming Dominots for himself.")
-    time.sleep(0.4)
     prSloYellow("You: This is MY Kingdom.!!!!")
-    time.sleep(0.5)
     prSloCyan("Guard: Not anymore. Well, rot in here for the rest of your life. Hehehe")
-    time.sleep(0.8)
     print_slow(".........")
-    time.sleep(0.5)
     print_slow("The guard leaves.")
-    time.sleep(0.7)
     prSloYellow("You: I need to escape from here and let Chiron know of all this.\n\n\n")
-    time.sleep(0.7)
-    if wall_value > 2:
+    if wall_value >= 2:
         secret_passage()
     else:
         the_escape()
-    #haany, make a choice option for the user to get a hold of this prick or something that user can take a look outside
-    #user will encounter a old wise snake over there who is hungry from ages, and if he helps the snake get some #
-    #food by snake game, the snake will help him get to somewhere out
-    #i will be adding that snake game soon, u just make the option thing and also tell me that how can we link that
-    #snake game to this rpg
-
 
 
 def dungeon_start():
@@ -113,7 +116,7 @@ def dungeon_start():
         if choice == "2":
             wall += 1
         if wall >= 2:
-            choices['2'] = "These walls.... They are no ordinary walls. It's a part of hidden tunnel system. Your father had it made."
+            choices['2'] = "These walls.... They are no ordinary walls. It's a part of hidden tunnel system that Chiron told you."
         print_slow(choices[choice])
     guard_enters(wall)
 

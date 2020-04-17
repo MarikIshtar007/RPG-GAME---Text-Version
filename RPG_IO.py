@@ -51,6 +51,7 @@ def prSloYellow(stmt):
         print("\033[93m {}\033[00m".format(letter), end="")
         time.sleep(.06)
     print()
+    time.sleep(1)
 
 
 def prSloLightPurple(stmt):
@@ -58,6 +59,7 @@ def prSloLightPurple(stmt):
         print("\033[94m {}\033[00m".format(letter), end="")
         time.sleep(.06)
     print()
+    time.sleep(1)
 
 
 def prSloPurple(stmt):
@@ -72,6 +74,7 @@ def prSloCyan(stmt):
         print("\033[96m {}\033[00m".format(letter), end="")
         time.sleep(.06)
     print()
+    time.sleep(1)
 
 
 def prSloLightGray(stmt):
@@ -86,4 +89,4 @@ def prSloBlack(stmt):
         print("\033[98m {}\033[00m".format(letter), end="")
         time.sleep(.06)
     print()
-2
+
