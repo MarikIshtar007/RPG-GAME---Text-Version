@@ -1,10 +1,15 @@
 import time
 
+def print_logo(str):
+    for letter in str:
+        print(letter, end="")
+        time.sleep(.00577)
+    print()
 
 def print_title(str):
     for letter in str:
         print(letter, end="")
-        time.sleep(.000002)
+        time.sleep(.02)
     print()
 
 def print_real_slow(str):
@@ -18,6 +23,33 @@ def print_slow(str):
         print(letter, end="")
         time.sleep(.06)
     print()
+
+
+def putin(string_msg, typ, alternative_text="Enter proper choice"):
+    """
+    The function makes sure the user inputs the proper value and persists until the user gives a proper value
+    :param string_msg: Storing the input message prompt.
+    :param typ: What type of input is to be expected from the user. Either "int" or "str".
+    :param alternative_text: The message to be displayed when wrong input is given.
+    :return:
+    """
+    ans = input(string_msg)
+    if typ == 'int':
+        while True:
+            if not ans.isdigit():
+                print_slow(alternative_text)
+                ans = int(string_msg)
+            else:
+                break
+        return int(ans)
+    elif typ == 'str':
+        while True:
+            if not ans.isalpha():
+                print_slow(alternative_text)
+                ans = input(string_msg)
+            else:
+                break
+        return ans
 
 
 # functions for colored text output - regular fashion

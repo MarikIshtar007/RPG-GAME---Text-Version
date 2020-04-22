@@ -15,7 +15,7 @@ def the_escape():
     time.sleep(0.7)
     print_slow("What will you do?")
     while bee < 2:
-        ans = input("1. Check out the hole again...\n2. Do Nothing.\n3. Try yelling at the guards\n")
+        ans = putin("1. Check out the hole again...\n2. Do Nothing.\n3. Try yelling at the guards\n", "int")
         if ans == "1":
             print_slow("The hole is not big enough for even your arm....")
             time.sleep(0.5)
@@ -44,7 +44,11 @@ def the_escape():
 
 
 #############################################################################################################
+########################## THE COMMENT SECTION #####################################
 ##########################################################################################################
+# We will keep this area just for commenting and leaving notes to each other about the changes made.
+# Update/Delete all of this when you've read it, but not that above 'comment section' tag.
+
 # I was thinking of making a choice here of taking the bronze plate along or not.
 # But the thing is, if we do that, then we will have to maintain an inventory as well
 # What do you say? Limited Inventory. The player will not be able to check it all the time.
@@ -53,11 +57,12 @@ def the_escape():
 # if you have certain items at that point in your inventory
 # Do we go ahead with it?
 
-
 # As for secret passage, we will try not to think about it much.. its just a shortcut, to almost direct exit
 # out of castle. But both secret passage and the_escape will make MC reach a common point.
 # Albeit, secret_passage will be shorter
 
+# I also added a new method called putin.. Be sure to check out that method in RPG_IO file..
+# We will be using this for taking in user input.
 
 def secret_passage():
     prSloYellow("You: Looks like everyone is gone.")
@@ -66,7 +71,6 @@ def secret_passage():
     prSloYellow("This place is certainly not the dungeons. ")
     prSloYellow("The passage was never connected to them.")
     prSloYellow("I don't care either way. I have to get out.")
-    pass
 
 
 def guard_enters(wall_value):
@@ -87,7 +91,7 @@ def guard_enters(wall_value):
 
 
 def dungeon_start():
-    time.sleep(0.8)
+    time.sleep(2)
     time_count = 0
     wall = 0
     choices = {'1': "The door is made with strengthened steel. It's very durable.\n",
@@ -111,7 +115,8 @@ def dungeon_start():
     while time_count<4:
         prRed("(choose the number of your choice)")
         time.sleep(1)
-        choice = input("1. Check the door\n2. Check the walls\n3. Look at the copper utensil\n4. Wait\n")
+        choice = putin("1. Check the door\n2. Check the walls\n3. Look at the copper utensil\n4. Wait\n", "int")
+
         time_count += 1
         if choice == "2":
             wall += 1
@@ -135,8 +140,8 @@ def init():
 
 
 def start():
-    print("#"*160)
-    print_title("          _______  _    _  ______ \n"            
+    print("#"*150)
+    print_logo("          _______  _    _  ______ \n"            
           "         |__   __|| |  | ||  ____|\n"             
           "            | |   | |__| || |__  \n"            
           "            | |   |  __  ||  __| \n"             
@@ -160,7 +165,7 @@ def start():
           "    |  __|  | |       / /\ \  | |\/| ||  __|\n"
           "    | |     | |____  / ____ \ | |  | || |____\n"
           "    |_|     |______|/_/    \_\|_|  |_||______|\n")
-    print_title("#"*160)
+    print_logo("#"*150)
     time.sleep(1.5)
     s1 = " Welcome to the Crown and Flame. An exicitng text-based RPG- Game "
     s2 = " In this game you will be assuming the role of a 17 year-old prince, "
@@ -168,13 +173,13 @@ def start():
     s4 = " You were knocked unconscious and now wake up in the dungeon. "
     s5 = " Help guide the prince to his freedom! "
     s6 = " And reclaim your rightful throne. "
-    print_title(s1.center(160, "#"))
-    print_title(s2.center(160, "#"))
-    print_title(s3.center(160, "#"))
-    print_title(s4.center(160, "#"))
-    print_title(s5.center(160, "#"))
-    print_title(s6.center(160, "#"))
-    print_title("#"*160)
+    print_title(s1.center(150, "#"))
+    print_title(s2.center(150, "#"))
+    print_title(s3.center(150, "#"))
+    print_title(s4.center(150, "#"))
+    print_title(s5.center(150, "#"))
+    print_title(s6.center(150, "#"))
+    print_title("#"*150)
 
 
 if __name__ == "__main__":
