@@ -3,7 +3,7 @@ import time
 def print_logo(str):
     for letter in str:
         print(letter, end="")
-        time.sleep(.00577)
+        time.sleep(.005177)
     print()
 
 def print_title(str):
@@ -38,10 +38,10 @@ def putin(string_msg, typ, alternative_text="Enter proper choice"):
         while True:
             if not ans.isdigit():
                 print_slow(alternative_text)
-                ans = int(string_msg)
+                ans = input(string_msg)
             else:
                 break
-        return int(ans)
+        return ans
     elif typ == 'str':
         while True:
             if not ans.isalpha():

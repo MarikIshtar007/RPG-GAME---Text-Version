@@ -122,6 +122,7 @@ def dungeon_start():
             wall += 1
         if wall >= 2:
             choices['2'] = "These walls.... They are no ordinary walls. It's a part of hidden tunnel system that Chiron told you."
+        print(choice)
         print_slow(choices[choice])
     guard_enters(wall)
 
