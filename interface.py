@@ -52,14 +52,12 @@ def send(output):
 
 def slow_output(output_list,i):
 	global insertion_idx
-	if i<=len(output_list):
-		text_out.after(1000,lambda: slow_output(output_list,i))
+	if i<len(output_list):
 		text_out.configure(state='normal')
-		output=output_list[i]
-		text_out.insert(str(insertion_idx),output)
-		insertion_idx+=len(output)
+		text_out.insert(insertion_idx,output_list[i])
+		insertion_idx+=len(output_list[i])
 		text_out.configure(state='disabled')
-		i+=1
+		text_out.after(1200,lambda: slow_output(output_list,i+1))
 	else:
 		pass
     
