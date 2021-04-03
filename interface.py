@@ -45,21 +45,28 @@ def send(output):
     insertion_idx+=len(output)
     text_out.configure(state='disabled')
 
-def send_loop(output):
+'''def send_loop(output):
     global insertion_idx
     text_out.insert(str(insertion_idx), output)
-    insertion_idx+=len(output)
+    insertion_idx+=len(output)'''
 
-def slow_output(output_list):
-    text_out.configure(state='normal')
-    for i in output_list:
-        send_loop(i)
-        sleep(0.6)
-    text_out.configure(state='disabled')
+def slow_output(output_list,i):
+	global insertion_idx
+	if i<=len(output_list):
+		text_out.after(1000,lambda: slow_output(output_list,i))
+		text_out.configure(state='normal')
+		output=output_list[i]
+		text_out.insert(str(insertion_idx),output)
+		insertion_idx+=len(output)
+		text_out.configure(state='disabled')
+		i+=1
+	else:
+		pass
+    
 
 
 # Core Logic
-slow_output(intro)
+slow_output(intro,0)
 
 # Main Application Loop
 root.mainloop()
